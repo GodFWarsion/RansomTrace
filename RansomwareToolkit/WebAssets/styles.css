@@ -1,0 +1,111 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f7fa;
+  color: #333;
+}
+
+header {
+  background-color: #090f18;
+  padding: 30px 20px;
+  text-align: center;
+  color: #fff;
+}
+
+header h1 {
+  font-size: 28px;
+  margin: 0 0 10px;
+}
+
+header p {
+  font-size: 16px;
+  margin: 0;
+}
+
+main.layout {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 30px;
+  flex-wrap: wrap;
+}
+
+.diagram {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.content {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 400px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+#phase-title {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #1a73e8;
+}
+
+#phase-desc {
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+
+/* Fade-in on page load */
+body {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Slide-in effect for phase details */
+.content {
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+.content.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Header bounce animation */
+header h1 {
+  animation: bounceIn 1s ease-out;
+}
+
+@keyframes bounceIn {
+  0%   { transform: scale(0.9); opacity: 0; }
+  60%  { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+.node {
+  transition: filter 0.3s ease, box-shadow 0.3s ease; /* Only apply transition on filter and shadow */
+}
+
+/* Hover effect for nodes */
+.node:hover {
+  cursor: pointer;
+  filter: brightness(1.2); /* Slightly brighten the node */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow to highlight the node */
+}
+

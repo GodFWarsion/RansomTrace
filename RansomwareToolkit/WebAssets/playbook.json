@@ -1,0 +1,71 @@
+{
+  "phases": [
+    {
+      "id": "prepare",
+      "title": "Preparation",
+      "roles": ["IT Admin", "Security Analyst"],
+      "actions": [
+        "Define incident response plan",
+        "Set up monitoring and backups",
+        "Train staff for ransomware awareness"
+      ]
+    },
+    {
+      "id": "detect",
+      "title": "Detection & Analysis",
+      "roles": ["SOC Team", "Incident Responder"],
+      "actions": [
+        "Analyze alerts/logs",
+        "Confirm ransomware infection",
+        "Classify incident severity"
+      ]
+    },
+    {
+      "id": "contain",
+      "title": "Containment",
+      "roles": ["Incident Responder", "Network Admin"],
+      "actions": [
+        "Isolate affected systems",
+        "Block malicious domains/IPs",
+        "Preserve forensic evidence"
+      ]
+    },
+    {
+      "id": "eradicate",
+      "title": "Eradication",
+      "roles": ["Malware Analyst", "IR Team"],
+      "actions": [
+        "Remove malware",
+        "Patch vulnerabilities",
+        "Update antivirus signatures"
+      ]
+    },
+    {
+      "id": "recover",
+      "title": "Recovery",
+      "roles": ["IT Admin", "Backup Team"],
+      "actions": [
+        "Restore systems from clean backups",
+        "Monitor for reinfection",
+        "Verify system integrity"
+      ]
+    },
+    {
+      "id": "postincident",
+      "title": "Post-Incident",
+      "roles": ["CISO", "Compliance Officer"],
+      "actions": [
+        "Document lessons learned",
+        "Revise playbook and policies",
+        "Communicate with stakeholders"
+      ]
+    }
+  ],
+  "links": [
+    { "from": "prepare", "to": "detect" },
+    { "from": "detect", "to": "contain" },
+    { "from": "contain", "to": "eradicate" },
+    { "from": "eradicate", "to": "recover" },
+    { "from": "recover", "to": "postincident" }
+  ]
+}

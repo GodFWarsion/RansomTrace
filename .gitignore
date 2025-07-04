@@ -1,0 +1,24 @@
+# Build results
+[Bb]in/
+[Oo]bj/
+*.exe
+*.dll
+*.pdb
+*.cache
+*.log
+
+# Visual Studio folders/files
+.vs/
+*.user
+*.suo
+
+# NuGet packages (cache/build output only, not project file)
+packages/
+*.nupkg
+project.lock.json
+project.assets.json
+
+# Others
+*.db
+*.DS_Store
+*.Thumbs.db

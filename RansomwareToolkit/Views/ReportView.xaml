@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="RansomwareToolkit.Views.ReportView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Background="#1C001C">
+    <Grid>
+        <!-- Display the report content in a TextBlock -->
+        <TextBlock x:Name="ReportText" 
+                   Foreground="White" 
+                   TextWrapping="Wrap" 
+                   VerticalAlignment="Top" 
+                   Margin="10,10,10,50" />
+
+        <!-- Buttons to export the report to PDF or HTML -->
+        <StackPanel VerticalAlignment="Bottom" Orientation="Horizontal" Margin="10,0">
+            <Button Content="Export to PDF" 
+                    HorizontalAlignment="Left" 
+                    Width="120" 
+                    Click="ExportPDF_Click"/>
+            <Button Content="Export to HTML" 
+                    HorizontalAlignment="Right" 
+                    Width="120" 
+                    Click="ExportHTML_Click"/>
+        </StackPanel>
+    </Grid>
+</UserControl>
