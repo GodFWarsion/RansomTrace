@@ -1,4 +1,16 @@
 # RansomTrace: Analysis & Playbook for Ransomware
+# RansomTrace: Analysis & Playbook for Ransomware
+
+![GitHub last commit](https://img.shields.io/github/last-commit/GodFWarsion/RansomTrace)
+![Repo size](https://img.shields.io/github/repo-size/GodFWarsion/RansomTrace)
+![MIT License](https://img.shields.io/github/license/GodFWarsion/RansomTrace)
+![Issues](https://img.shields.io/github/issues/GodFWarsion/RansomTrace)
+![Stars](https://img.shields.io/github/stars/GodFWarsion/RansomTrace?style=social)
+
+![Platform](https://img.shields.io/badge/platform-Windows%2011-blue?logo=windows)
+![Built With](https://img.shields.io/badge/built%20with-C%23%20%7C%20.NET%20WPF-blueviolet?logo=.net)
+![Analysis Engine](https://img.shields.io/badge/analysis-YARA%20%7C%20SIGMA-yellow?logo=virustotal)
+![Sandbox](https://img.shields.io/badge/integrates-FlareVM%20%7C%20REMnux-orange?logo=vmware)
 
 **RansomTrace** is a modular ransomware analysis and incident response toolkit designed for cybersecurity researchers and forensic analysts. It enables both static and dynamic inspection of malware samples using YARA/SIGMA-based detection, entropy scanning, sandbox integration, and rule auto-generation — all wrapped inside a C# WPF-based GUI.
 
