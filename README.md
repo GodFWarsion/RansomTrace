@@ -1,95 +1,45 @@
 # RansomTrace: Analysis & Playbook for Ransomware
 
-**RansomTrace** is a modular ransomware analysis and incident response framework designed for forensic investigators and malware researchers. The toolkit provides both **static and dynamic analysis capabilities**, including rule-based detection, sandbox execution, behavioral monitoring, and real-time response mechanisms. It integrates with **FlareVM** and **REMnux** to support comprehensive reverse engineering workflows.
+**RansomTrace** is a modular ransomware analysis and incident response toolkit designed for cybersecurity researchers and forensic analysts. It enables both static and dynamic inspection of malware samples using YARA/SIGMA-based detection, entropy scanning, sandbox integration, and rule auto-generation — all wrapped inside a C# WPF-based GUI.
 
 ---
 
 ## 🔍 Abstract
 
-Ransomware has evolved into sophisticated cyber threats involving both encryption and persistence mechanisms. **RansomTrace** addresses this by enabling analysts to investigate PE files, detect cryptographic APIs, calculate entropy, and monitor runtime behavior inside isolated sandboxes. It also follows a structured **Incident Response Playbook** to guide practitioners through containment, eradication, and recovery phases.
+Ransomware has evolved into sophisticated cyber threats involving encryption, persistence, anti-analysis, and data theft. **RansomTrace** aims to streamline the forensic process for ransomware by providing a structured platform for investigation, detection, and response. Integrated with the ransomware incident response playbook, the tool automates detection workflows while enabling modular reverse engineering capabilities via FlareVM and REMnux.
 
 ---
 
 ## 🧠 Key Features
 
-- **Static Analysis**
-  - Entropy analysis & visualization
-  - PE file header inspection & signature detection
-  - YARA rule generation from extracted strings or APIs
-  - Bytecode/Opcode disassembly & similarity scoring
+- 🔐 **Static Analysis**  
+  - Entropy scanning and visualization  
+  - PE structure inspection and string signature analysis  
+  - Auto-generated YARA rules from artifacts  
+  - Opcode disassembly and binary diffing
 
-- **Dynamic Analysis**
-  - API call tracing (`CreateFile`, `WriteFile`, `CryptEncrypt`)
-  - System call pattern detection
-  - Registry & file I/O monitoring
-  - Honeypot decoy file triggering
-  - C2 network traffic inspection (Wireshark, proxy-tunneling, SSL interception)
+- 🧪 **Dynamic Analysis**  
+  - API call monitoring (`CreateFile`, `CryptEncrypt`, etc.)  
+  - Registry, file system, and memory interaction logging  
+  - Honeypot trigger detection  
+  - Live behavior monitoring via sandboxed VM
 
-- **Rule Generation**
-  - Auto-generation of **YARA** and **SIGMA** rules from analysis
-  - Memory scanning and in-memory unpacked malware detection
+- ⚡ **Rule-Based Detection**  
+  - YARA and SIGMA rule integration  
+  - Memory rule matching and signature scanning  
+  - Log-based behavioral detection using Sysmon + Sigma
 
-- **Evasion & Obfuscation Detection**
-  - Sandbox & VM detection
-  - Packed binary recognition
-  - API resolution via hashing and dynamic imports
-
-- **Modular Extensibility**
-  - Supports future integration with:
-    - x64dbg / WinDbg
-    - Ghidra / IDA Pro
-    - Virtual machine pipelines (VMware / VirtualBox)
+- 🧩 **Modular Integration**  
+  - Ready for integration with FlareVM, REMnux  
+  - Debugging workflows via IDA Pro, x64dbg  
+  - Incident Playbook HTML module for live response mapping
 
 ---
 
-## 🔍 Key Analysis Techniques
+## 🚀 Getting Started
 
-- **Entropy Calculation** – Detects encrypted/compressed sections  
-- **Header/Signature Analysis** – PE validation & anomaly discovery  
-- **Dynamic Execution** – Analyzes ransomware runtime behavior  
-- **Network Behavior** – C2 beaconing and encrypted traffic inspection  
-- **File Activity Monitoring** – Burst write detection, extension spoofing  
-- **Decoy Files** – Monitored honeypots to trigger ransomware  
-- **System Calls & API Chains** – Detects suspicious syscall sequences  
-- **Bytecode Diffs** – Highlights encryption-modified file diffs  
+### 1. Clone the Repository
 
----
-
-## 🧩 Tech Stack
-
-- **Language**: C# (.NET WPF)  
-- **Sandbox Platforms**: FlareVM, REMnux  
-- **Rule Engines**: YARA, SIGMA  
-- **External Tools**: IDA Pro, x64dbg, Process Hacker, Wireshark  
-
----
-
-## 🛠️ System Requirements
-
-| Component          | Specification                          |
-|--------------------|----------------------------------------|
-| CPU                | Intel Core i5-10900H with VT-x         |
-| RAM                | 16 GB DDR4                             |
-| Storage            | 1 TB SSD                               |
-| OS                 | Windows 11 Home 23H2                   |
-| Sandbox            | VMware Workstation / VirtualBox        |
-| Network Tools      | Wireshark, Process Monitor             |
-| Analysis Tools     | IDA Pro, x64dbg, Volatility, PEStudio  |
-
----
-
-## 🔐 Sample YARA Rule (WannaCry)
-
-```yara
-rule WannaCry_Sample {
-  meta:
-    description = "Detects a known WannaCry ransomware binary"
-    author = "GoDFWARSION"
-    malware_family = "WannaCry"
-  strings:
-    $s1 = "WannaDecryptor" nocase
-    $s2 = "mssecsvc.exe" nocase
-    $h1 = "http://www.iuqerfsodp9ifjaposdfj" nocase
-  condition:
-    any of ($s*) and $h1
-}
+```bash
+git clone https://github.com/GodFWarsion/RansomTrace.git
+cd RansomTrace
