@@ -1,5 +1,4 @@
 # RansomTrace: Analysis & Playbook for Ransomware
-# RansomTrace: Analysis & Playbook for Ransomware
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/GodFWarsion/RansomTrace)
 ![Repo size](https://img.shields.io/github/repo-size/GodFWarsion/RansomTrace)
