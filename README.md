@@ -1,5 +1,6 @@
 # RansomTrace: Analysis & Playbook for Ransomware
 
+![RansomTrace Banner](./banner.png)
 ![GitHub last commit](https://img.shields.io/github/last-commit/GodFWarsion/RansomTrace)
 ![Repo size](https://img.shields.io/github/repo-size/GodFWarsion/RansomTrace)
 ![MIT License](https://img.shields.io/github/license/GodFWarsion/RansomTrace)
